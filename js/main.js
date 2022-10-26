@@ -38,7 +38,7 @@ prev.addEventListener('click', function() {
     } else if (indexImg == 0) {
         img[indexImg].classList.remove('mostra');
         indexImg = img.length;
-        indexImg -= img.length;
+        indexImg -= 1;
         img[indexImg].classList.add('mostra');
         
     }
