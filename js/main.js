@@ -13,38 +13,34 @@ for (i = 0; i < immagini.length; i++) {
 }
 
 let img = document.querySelectorAll('.item')
-console.log(img);
 
 const next = document.querySelector(".prossimo");
 let indexImg = 0;
 
 next.addEventListener('click', function() {
-    if (indexImg == img.length -1) {
+    if (indexImg !== img.length) {
         img[indexImg].classList.remove('mostra');
         indexImg += 1;
         img[indexImg].classList.add('mostra');
-    }
-    else {
-        img[indexImg].classList.remove('mostra');
-        indexImg += 1;
+    } else if (indexImg == img.length) {
+        indexImg -= img.length;
         img[indexImg].classList.add('mostra');
-
     }
 })
 
 const prev = document.querySelector(".precedente");
 
 prev.addEventListener('click', function() {
-    if (indexImg == 0) {
+    if (indexImg !== 0) {
         img[indexImg].classList.remove('mostra');
         indexImg -= 1;
         img[indexImg].classList.add('mostra');
-    }
-    else {
+    } else if (indexImg == 0) {
         img[indexImg].classList.remove('mostra');
-        indexImg -= 1;
+        indexImg = img.length;
+        indexImg -= img.length;
         img[indexImg].classList.add('mostra');
-
+        
     }
 })
 
