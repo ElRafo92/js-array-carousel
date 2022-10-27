@@ -19,7 +19,7 @@ let indexImg = 0;
 
 next.addEventListener('click', function() {
     img[indexImg].classList.remove('mostra');
-    if (indexImg === img.length - 1) {
+    if (indexImg === img.length -1) {
         indexImg = 0;
     } else {
         indexImg ++;
