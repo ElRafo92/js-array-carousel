@@ -18,29 +18,24 @@ const next = document.querySelector(".prossimo");
 let indexImg = 0;
 
 next.addEventListener('click', function() {
-    if (indexImg !== img.length) {
-        img[indexImg].classList.remove('mostra');
-        indexImg += 1;
-        img[indexImg].classList.add('mostra');
-    } else if (indexImg == img.length) {
-        indexImg -= img.length;
-        img[indexImg].classList.add('mostra');
+    img[indexImg].classList.remove('mostra');
+    if (indexImg === img.length - 1) {
+        indexImg = 0;
+    } else {
+        indexImg ++;
     }
+    img[indexImg].classList.add('mostra');
 })
 
 const prev = document.querySelector(".precedente");
 
 prev.addEventListener('click', function() {
-    if (indexImg !== 0) {
-        img[indexImg].classList.remove('mostra');
-        indexImg -= 1;
-        img[indexImg].classList.add('mostra');
-    } else if (indexImg == 0) {
-        img[indexImg].classList.remove('mostra');
-        indexImg = img.length;
-        indexImg -= 1;
-        img[indexImg].classList.add('mostra');
-        
+    img[indexImg].classList.remove('mostra');
+    if (indexImg === 0) {
+        indexImg = img.length - 1;
+    } else {
+        indexImg --;
     }
+    img[indexImg].classList.add('mostra');
 })
 
